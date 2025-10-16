@@ -15,6 +15,25 @@ humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
 let windSpeedElement = document.querySelector("#wind-speed");
 windSpeedElement.innerHTML = `${response.data.wind.speed} km/h`;
 
+let date = new Date(response.data.time * 1000);
+let timeElement = document.querySelector("#time");
+timeElement.innerHTML = formatDate(date);
+
+}
+
+function formatDate(date){
+
+let minutes = date.getMinutes();
+let hours = date.getHours();
+let days = ["Sunday", "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+let day = days[date.getDay()];
+
+if (minutes < 10){
+  minutes = `0${minutes}`;
+}
+
+return `${day} ${hours}:${minutes}`;
+
 
 }
 
