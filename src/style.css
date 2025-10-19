@@ -79,8 +79,10 @@ align-items:center;
     width: 70px;
     height:70px;
     margin-top:10px;
+}
 
-
+.weather-unit-container {
+  display: flex;
 }
 .weather-app-temperature{
     font-size: 60px;
